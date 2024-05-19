@@ -68,7 +68,7 @@ void insertAt(int pos, int val){
 void deleteFromBegining(){
     node *ptr = start;
     if(start == NULL){
-        printf("Linked list od empty.");
+        printf("Linked list is empty.");
     }
     else if(start->link == NULL){
         printf("Cannot delete, only one element present.");
