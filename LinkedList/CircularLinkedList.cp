@@ -159,10 +159,11 @@ void print(){
     else{
         printf("The linked list is: \n");
         node *ptr = start;
-        while(ptr != NULL){
+        while(ptr->link != start){
             printf("%d\t", ptr->info);
             ptr = ptr->link;
         }
+        printf("%d\t", ptr->info);
         // printf("%d", ptr->info);
     }
 }
