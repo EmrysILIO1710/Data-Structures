@@ -1,3 +1,5 @@
+// time complexity: 0(log n)
+//best cae: 0(constant)
 #include <stdio.h>
 
 void sort(int *arr, int len){

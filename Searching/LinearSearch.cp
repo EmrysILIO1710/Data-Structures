@@ -1,3 +1,5 @@
+// time complexity: 0(n)
+// best case: 0(1)
 #include <stdio.h>
 
 int linearSearch(int *arr, int len, int val){
