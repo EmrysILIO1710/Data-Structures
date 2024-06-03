@@ -1,3 +1,6 @@
+//time complexity : O(n^2)
+//optimized sollution : O(n)
+
 #include <stdio.h>
 
 void bubbleSort(int *, int);
@@ -16,7 +19,7 @@ int main(){
 
 void bubbleSort(int *a, int s){
     for(int i = 0; i < s - 1; i++){
-        int flag = 0;
+        int flag = 0; //for optimized sollution
         for(int j = 0; j < s - i - 1; j++){
             if(*(a + j) > *(a + j + 1)){
                 int temp = *(a + j);
