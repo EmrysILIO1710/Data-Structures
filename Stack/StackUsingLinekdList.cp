@@ -15,8 +15,8 @@ typedef struct stack{
 } stack;
 
 void push(stack *, int);
-// void pop(stack *);
-// void print(stack *);
+void pop(stack *);
+void print(stack *);
 
 int main(){
     stack s;
@@ -25,7 +25,7 @@ int main(){
     int ch, n, flag;
     flag = 1;
     while(flag){
-        printf("Enter choice: \n");
+        printf("\nEnter choice: \n");
         printf("1. Push\n");
         printf("2. Pop\n");
         printf("3. Display\n");
@@ -36,10 +36,10 @@ int main(){
                     scanf("%d", &n);
                     push(&s, n);
                     break;
-            // case 2: pop(&s);
-            //         break;
-            // case 3: print(&s);
-            //         break;
+            case 2: pop(&s);
+                    break;
+            case 3: print(&s);
+                    break;
             case 4: flag = 0;
                     break;
             default: printf("Invalid choice... \n");
@@ -61,10 +61,43 @@ void push(stack *s, int val){
             end = s->start;
         }
         else{
+            end->next = newptr;
             newptr->data = val;
-            newptr->next = end;
+            newptr->next = NULL;
             end = newptr;
         }
         s->top++;
+    }
+}
+
+void pop(stack *s){
+    if(s->top == 0){
+        printf("\nStack is empty...");
+    }
+    else{
+        node *ptr = s->start;
+        node *prev = ptr;
+        while(ptr->next != NULL){
+            prev = ptr;
+            ptr = ptr->next;
+        }
+        prev->next = NULL;
+        end = prev;
+        free(ptr);
+        s->top--;
+    }
+}
+
+void print(stack *s){
+    if(s->top == 0){
+        printf("\nStack is empty...");
+    }
+    else{
+        // printf("\nSorted array: \n");
+        node *ptr = s->start;
+        while(ptr != NULL){
+            printf("%d\t", ptr->data);
+            ptr = ptr->next;
+        }
     }
 }
