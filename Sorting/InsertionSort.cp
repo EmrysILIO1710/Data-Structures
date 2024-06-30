@@ -1,3 +1,7 @@
+// time complexity : O(n^2)
+// optimized sollution : O(n)
+// best case : O(n)
+
 #include <stdio.h>
 
 void insertionSort(int *, int);
@@ -12,6 +16,7 @@ int main(){
     }
     insertionSort(arr, size);
     print(arr, size);
+    return 0;
 }
 
 void insertionSort(int *a, int s){
